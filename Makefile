@@ -6,7 +6,7 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/05/10 10:37:44 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/05/13 05:09:02 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@
 
 NAME		=	libft.a
 
-SRC_PATH	=	./srcs/
-OBJ_PATH	=	./obj/
-INC_PATH	=	./includes/
+SRC_PATH	=	
+OBJ_PATH	=	obj/
+INC_PATH	=	
 
 SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_memchr.c ft_memcmp.c	ft_strlen.c ft_strdup.c ft_strcpy.c \
@@ -35,10 +35,12 @@ SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_lstmap.c \
 				\
 				ft_abs.c ft_factorial.c ft_power.c ft_sqrt.c ft_atoi_base.c \
-				ft_itoa_base.c \
+				ft_itoa_base.c ft_gcd.c ft_nextprime.c \
 				\
 				ft_btree_create_node.c ft_btree_delone.c ft_btree_apply_prefix.c \
 				ft_btree_apply_infix.c ft_btree_apply_suffix.c \
+				\
+				ft_memswap.c ft_qsort.c \
 				\
 				get_next_line.c
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
@@ -58,7 +60,7 @@ $(NAME):		$(OBJ)
 
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.c $(INC)
 				@mkdir -p $(OBJ_PATH)
-				@gcc -Wall -Wextra -Werror -I $(INC_PATH) -o $@ -c $<
+				@gcc -Wall -Wextra -Werror -o $@ -c $<
 				@echo "Compiling [ $< ] OK"
 
 clean:

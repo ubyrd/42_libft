@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_gcd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 22:21:31 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/04/12 02:12:34 by ubyrd            ###   ########.fr       */
+/*   Created: 2019/05/13 01:43:39 by ubyrd             #+#    #+#             */
+/*   Updated: 2019/05/13 01:55:31 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_memmove(void *dst, const void *src, size_t len)
+int				ft_gcd(int a, int b)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	int				r;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (d < s)
-		while (len--)
-			*(d++) = *(s++);
-	else if (d > s)
-		while (len--)
-			*(d + len) = *(s + len);
-	return (dst);
+	a = a >= 0 ? a : -a;
+	b = b >= 0 ? b : -b;
+	r = a;
+	while (r)
+	{
+		a = b;
+		b = r;
+		r = a;
+		while (b <= r)
+			r = r - b;
+	}
+	return (!a ? a : b);
 }

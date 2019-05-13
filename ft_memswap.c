@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 05:21:00 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/04/18 19:10:40 by ubyrd            ###   ########.fr       */
+/*   Created: 2019/05/13 01:32:43 by ubyrd             #+#    #+#             */
+/*   Updated: 2019/05/13 01:38:20 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void			ft_memswap(void *pt1, void *pt2, size_t width)
 {
-	if (!f)
+	unsigned char	*a;
+	unsigned char	*b;
+	unsigned char	temp;
+	size_t			i;
+
+	if (!pt1 || !pt2 || !width || pt1 == pt2)
 		return ;
-	while (lst)
+	a = (unsigned char *)pt1;
+	b = (unsigned char *)pt2;
+	i = -1;
+	while (++i < width)
 	{
-		(*f)(lst);
-		lst = lst->next;
+		temp = *(a + i);
+		*(a + i) = *(b + i);
+		*(b + i) = temp;
 	}
 }

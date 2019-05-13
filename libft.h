@@ -6,7 +6,7 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 21:02:51 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/05/09 21:26:52 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/05/13 01:48:26 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,8 @@ int				ft_power(int n, int power);
 int				ft_sqrt(int n);
 int				ft_atoi_base(const char *str, int base);
 char			*ft_itoa_base(int n, int base);
+int				ft_gcd(int a, int b);
+int				ft_nextprime(int n);
 
 /*
 ** Extra part: binary tree
@@ -120,5 +122,12 @@ void			ft_btree_delone(t_btree **node, void (*del)(void *, size_t));
 void			ft_btree_apply_prefix(t_btree *root, void (*f)(t_btree *));
 void			ft_btree_apply_infix(t_btree *root, void (*f)(t_btree *));
 void			ft_btree_apply_suffix(t_btree *root, void (*f)(t_btree *));
+
+/*
+** Extra part: sorting
+*/
+void			ft_memswap(void *pt1, void *pt2, size_t width);
+void			ft_qsort(void *base, size_t nel, size_t width,
+						int (*compar)(const void *, const void *));
 
 #endif

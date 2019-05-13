@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_nextprime.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 04:52:01 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/04/15 20:47:13 by ubyrd            ###   ########.fr       */
+/*   Created: 2019/05/13 01:56:23 by ubyrd             #+#    #+#             */
+/*   Updated: 2019/05/13 03:33:23 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list			*ft_lstnew(void const *content, size_t content_size)
+int				ft_nextprime(int n)
 {
-	t_list			*a;
+	int				x;
 
-	if (!(a = (t_list *)malloc(sizeof(*a))))
-		return (NULL);
-	if (!content || !content_size)
+	if (n <= 1)
+		return (2);
+	x = 3;
+	n = n % 2 ? n + 2 : n + 1;
+	if (n < 0)
+		return (0);
+	while ((n / x) >= x)
 	{
-		a->content = NULL;
-		a->content_size = 0;
-	}
-	else
-	{
-		if (!(a->content = malloc(content_size)))
+		if (!(n % x))
 		{
-			free((void *)a);
-			return (NULL);
+			n += 2;
+			x = 3;
+			continue ;
 		}
-		a->content = ft_memcpy(a->content, content, content_size);
-		a->content_size = content_size;
+		x += 2;
 	}
-	a->next = NULL;
-	return (a);
+	return (n);
 }
