@@ -6,7 +6,7 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/05/13 05:09:02 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/05/21 14:12:47 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@
 
 NAME		=	libft.a
 
-SRC_PATH	=	
+SRC_PATH	=	srcs/
 OBJ_PATH	=	obj/
-INC_PATH	=	
+INC_PATH	=	includes/
 
 SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_memchr.c ft_memcmp.c	ft_strlen.c ft_strdup.c ft_strcpy.c \
@@ -44,7 +44,7 @@ SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				\
 				get_next_line.c
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
-INC_NAME	=	libft.h get_next_line.h
+INC_NAME	=	libft.h libft_basic.h get_next_line.h
 
 SRC			=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ			=	$(addprefix $(OBJ_PATH), $(OBJ_NAME))
@@ -60,7 +60,7 @@ $(NAME):		$(OBJ)
 
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.c $(INC)
 				@mkdir -p $(OBJ_PATH)
-				@gcc -Wall -Wextra -Werror -o $@ -c $<
+				@gcc -Wall -Wextra -Werror -I $(INC_PATH) -o $@ -c $<
 				@echo "Compiling [ $< ] OK"
 
 clean:
