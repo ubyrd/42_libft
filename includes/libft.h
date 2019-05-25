@@ -6,7 +6,7 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:49:12 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/05/23 12:09:40 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/05/25 21:01:02 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,14 @@ void			ft_btree_apply_suffix(t_btree *root, void (*f)(t_btree *));
 void			ft_memswap(void *pt1, void *pt2, size_t width);
 void			ft_qsort(void *base, size_t nel, size_t width,
 								int (*compar)(const void *, const void *));
+
+/*
+** Extra part: wchar_t
+*/
+void			ft_putwchar(wchar_t c);
+void			ft_putwstr(wchar_t const *s);
+void			ft_putwchar_fd(wchar_t c, int fd);
+void			ft_putwstr_fd(wchar_t const *s, int fd);
 
 /*
 ** ---------- GET_NEXT_LINE ----------
