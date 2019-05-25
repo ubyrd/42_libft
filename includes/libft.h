@@ -6,7 +6,7 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:49:12 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/05/25 21:01:02 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/05/25 23:31:53 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,8 @@ void			ft_putwchar(wchar_t c);
 void			ft_putwstr(wchar_t const *s);
 void			ft_putwchar_fd(wchar_t c, int fd);
 void			ft_putwstr_fd(wchar_t const *s, int fd);
+size_t			ft_wcharlen(wchar_t c);
+size_t			ft_wstrlen(const wchar_t *s);
 
 /*
 ** ---------- GET_NEXT_LINE ----------

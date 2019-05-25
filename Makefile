@@ -6,7 +6,7 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/05/25 21:11:37 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/05/25 23:34:07 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_memswap.c ft_qsort.c \
 				\
 				ft_putwchar.c ft_putwstr.c ft_putwchar_fd.c ft_putwstr_fd.c \
+				ft_wcharlen.c ft_wstrlen.c \
 				\
 				get_next_line.c
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
