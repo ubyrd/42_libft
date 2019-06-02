@@ -6,17 +6,16 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/05/25 23:34:07 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/06/03 02:22:20 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-.PHONY:		all clean fclean re
 
 NAME		=	libft.a
 
 SRC_PATH	=	srcs/
 OBJ_PATH	=	obj/
 INC_PATH	=	includes/
+PRINTF_PATH	=	ft_printf/
 
 SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_memchr.c ft_memcmp.c	ft_strlen.c ft_strdup.c ft_strcpy.c \
@@ -48,18 +47,28 @@ SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				get_next_line.c
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
 INC_NAME	=	libft.h libft_basic.h get_next_line.h
+PRINTF_NAME	=	libftprintf.a
 
 SRC			=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ			=	$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INC			=	$(addprefix $(INC_PATH), $(INC_NAME))
+PRINTF		=	$(addprefix $(PRINTF_PATH), $(PRINTF_NAME))
+
+.PHONY:			all $(PRINTF_NAME) clean fclean re
 
 
-all:			$(NAME)
+all:			$(PRINTF_NAME) $(NAME)
 
-$(NAME):		$(OBJ)
+$(PRINTF_NAME):
+				@make -C $(PRINTF_PATH)
+
+$(NAME):		$(PRINTF) $(OBJ)
+				@cp $(PRINTF) $(NAME)
 				@ar rc $(NAME) $(OBJ)
 				@ranlib $(NAME)
 				@echo "Linking & indexing [ $(NAME) ] SUCCESS"
+
+$(PRINTF):		$(PRINTF_NAME)
 
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.c $(INC)
 				@mkdir -p $(OBJ_PATH)
@@ -67,6 +76,7 @@ $(OBJ_PATH)%.o:	$(SRC_PATH)%.c $(INC)
 				@echo "Compiling [ $< ] OK"
 
 clean:
+				@make fclean -C $(PRINTF_PATH)
 				@rm -f $(OBJ)
 				@rm -rf $(OBJ_PATH)
 				@echo "Cleaning [ $(NAME) ] OK"

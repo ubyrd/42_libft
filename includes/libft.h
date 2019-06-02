@@ -6,18 +6,20 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:49:12 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/05/25 23:31:53 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/06/03 02:28:58 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <stdarg.h>
 
 typedef struct	s_list
 {
@@ -152,5 +154,11 @@ size_t			ft_wstrlen(const wchar_t *s);
 */
 int				gnl_buffree(const int func_param, const int fd);
 int				get_next_line(const int fd, char **line);
+
+/*
+** ---------- FT_PRINTF && FT_DPRINTF ----------
+*/
+int				ft_printf(const char *format, ...);
+int				ft_dprintf(int fd, const char *format, ...);
 
 #endif
