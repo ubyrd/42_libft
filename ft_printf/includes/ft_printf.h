@@ -6,7 +6,7 @@
 /*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:16:21 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/03 02:22:41 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/06/04 06:24:40 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define BOLD   "\033[1m"
 # define UNDR   "\033[4m"
 
-# define WHT    "\x1B[30m"
+# define WHT    "\x1B[97m"
 # define RED    "\x1B[31m"
 # define GRN    "\x1B[32m"
 # define YEL    "\x1B[33m"
@@ -34,7 +34,7 @@
 # define CYN    "\x1B[36m"
 # define GRY    "\x1B[37m"
 
-# define BG_WHT "\x1B[40m"
+# define BG_WHT "\x1B[107m"
 # define BG_RED "\x1B[41m"
 # define BG_GRN "\x1B[42m"
 # define BG_YEL "\x1B[43m"
