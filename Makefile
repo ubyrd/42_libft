@@ -6,9 +6,14 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/06/03 02:22:20 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/06/14 15:17:20 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+GRN			=	\x1B[32m
+MAG			=	\x1B[35m
+RES			=	\x1B[0m
+
 
 NAME		=	libft.a
 
@@ -66,23 +71,23 @@ $(NAME):		$(PRINTF) $(OBJ)
 				@cp $(PRINTF) $(NAME)
 				@ar rc $(NAME) $(OBJ)
 				@ranlib $(NAME)
-				@echo "Linking & indexing [ $(NAME) ] SUCCESS"
+				@echo "$(GRN)\nLinking & indexing [ $(NAME) ] SUCCESS$(RES)"
 
 $(PRINTF):		$(PRINTF_NAME)
 
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.c $(INC)
 				@mkdir -p $(OBJ_PATH)
 				@gcc -Wall -Wextra -Werror -I $(INC_PATH) -o $@ -c $<
-				@echo "Compiling [ $< ] OK"
+				@echo "$(GRN).\c$(RES)"
 
 clean:
 				@make fclean -C $(PRINTF_PATH)
 				@rm -f $(OBJ)
 				@rm -rf $(OBJ_PATH)
-				@echo "Cleaning [ $(NAME) ] OK"
+				@echo "$(MAG)Cleaning [ $(NAME) ] OK$(RES)"
 
 fclean:			clean
 				@rm -f $(NAME)
-				@echo "Delete [ $(NAME) ] OK"
+				@echo "$(MAG)Delete [ $(NAME) ] OK$(RES)"
 
 re:				fclean all
