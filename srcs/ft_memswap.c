@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_basic.h"
+#include "libft.h"
 
 void			ft_memswap(void *pt1, void *pt2, size_t width)
 {

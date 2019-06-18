@@ -6,7 +6,7 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/06/14 15:17:20 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/06/18 15:23:28 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC_NAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				\
 				get_next_line.c
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
-INC_NAME	=	libft.h libft_basic.h get_next_line.h
+INC_NAME	=	libft.h get_next_line.h
 PRINTF_NAME	=	libftprintf.a
 
 SRC			=	$(addprefix $(SRC_PATH), $(SRC_NAME))
@@ -78,7 +78,7 @@ $(PRINTF):		$(PRINTF_NAME)
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.c $(INC)
 				@mkdir -p $(OBJ_PATH)
 				@gcc -Wall -Wextra -Werror -I $(INC_PATH) -o $@ -c $<
-				@echo "$(GRN).\c$(RES)"
+				@echo ".\c"
 
 clean:
 				@make fclean -C $(PRINTF_PATH)

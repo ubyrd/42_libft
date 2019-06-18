@@ -6,7 +6,7 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:49:12 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/04 07:17:25 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/06/18 15:32:06 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <stdarg.h>
 
 /*
 ** ---------- MACROS ----------

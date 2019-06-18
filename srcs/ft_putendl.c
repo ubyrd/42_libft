@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_basic.h"
+#include "libft.h"
 
 void			ft_putendl(char const *s)
 {

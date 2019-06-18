@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_basic.h"
+#include "libft.h"
 #include <stdio.h>
 
 static int		get_nbr(const char *str, int base, int sign)

@@ -6,18 +6,13 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 12:27:58 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/05/21 13:47:42 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/06/18 15:32:00 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include "libft_basic.h"
+# include "libft.h"
 
 /*
 ** Buffer size

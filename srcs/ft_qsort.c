@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_basic.h"
+#include "libft.h"
 
 void			ft_qsort(void *base, size_t nel, size_t width,
 								int (*compar)(const void *, const void *))
