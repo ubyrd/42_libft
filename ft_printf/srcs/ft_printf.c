@@ -6,7 +6,7 @@
 /*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:20:34 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/01 02:25:02 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/06/26 02:43:45 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				ft_printf(const char *format, ...)
 	}
 	va_end(p.ap);
 	write(p.fd, p.buff, p.buff_i);
-	return (p.out_len += p.buff_i);
+	return (p.out_len);
 }
 
 int				ft_dprintf(int fd, const char *format, ...)
@@ -66,13 +66,13 @@ int				ft_dprintf(int fd, const char *format, ...)
 
 void			buffer(t_printf *p, char *src, int size)
 {
+	p->out_len += size;
 	while (BUFF_SIZE - p->buff_i < size)
 	{
 		size -= BUFF_SIZE - p->buff_i;
 		while (p->buff_i < BUFF_SIZE)
 			p->buff[p->buff_i++] = *(src++);
 		write(p->fd, p->buff, BUFF_SIZE);
-		p->out_len += p->buff_i;
 		p->buff_i = 0;
 	}
 	while (size--)
