@@ -6,7 +6,7 @@
 /*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:20:34 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/26 02:43:45 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/07/15 01:23:24 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int				ft_dprintf(int fd, const char *format, ...)
 	}
 	va_end(p.ap);
 	write(p.fd, p.buff, p.buff_i);
-	return (p.out_len += p.buff_i);
+	return (p.out_len);
 }
 
 void			buffer(t_printf *p, char *src, int size)
