@@ -6,7 +6,7 @@
 /*   By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:49:12 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/18 15:32:06 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/07/15 23:04:46 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <stdarg.h>
 
 /*
 ** ---------- MACROS ----------
@@ -174,5 +175,7 @@ int				get_next_line(const int fd, char **line);
 */
 int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
+int				ft_vprintf(const char *format, va_list ap);
+int				ft_vdprintf(int fd, const char *format, va_list ap);
 
 #endif

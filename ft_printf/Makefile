@@ -6,7 +6,7 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/21 00:32:42 by ubyrd             #+#    #+#              #
-#    Updated: 2019/06/18 15:35:12 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/07/15 23:03:34 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ RES			=	\x1B[0m
 NAME			=	libftprintf.a
 
 SRC_PATH		=	srcs/
-OBJ_PATH		=	obj/
+OBJ_PATH		=	srcs/obj/
 INC_PATH		=	includes/
 LIB_INC_PATH	=	../includes/
 
-SRC_NAME		=	ft_printf.c parsing.c int.c int_caster.c float.c \
+SRC_NAME		=	ft_printf.c output.c parsing.c int.c int_caster.c float.c \
 					float_handler.c float_utils.c float_prec.c float_writer.c \
 					char.c colors.c miscellaneous.c
 OBJ_NAME		=	$(SRC_NAME:.c=.o)

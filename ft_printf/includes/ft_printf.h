@@ -6,7 +6,7 @@
 /*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:16:21 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/04 06:24:40 by ubyrd            ###   ########.fr       */
+/*   Updated: 2019/07/15 22:47:29 by ubyrd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,13 +131,15 @@ typedef	union	u_float
 
 int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
+int				ft_vprintf(const char *format, va_list ap);
+int				ft_vdprintf(int fd, const char *format, va_list ap);
 
 /*
 ** ---------- OTHER FUNCTIONS ----------
 */
 
 /*
-** ft_printf.c
+** output.c
 */
 void			buffer(t_printf *p, char *src, int size);
 void			padding(t_printf *p, int func_param);

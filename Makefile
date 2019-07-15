@@ -6,7 +6,7 @@
 #    By: ubyrd <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 18:42:33 by ubyrd             #+#    #+#              #
-#    Updated: 2019/06/18 15:23:28 by ubyrd            ###   ########.fr        #
+#    Updated: 2019/07/15 23:03:59 by ubyrd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RES			=	\x1B[0m
 NAME		=	libft.a
 
 SRC_PATH	=	srcs/
-OBJ_PATH	=	obj/
+OBJ_PATH	=	srcs/obj/
 INC_PATH	=	includes/
 PRINTF_PATH	=	ft_printf/
 
